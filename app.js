@@ -1,6 +1,7 @@
 const canvas = document.getElementById("jsCanvas")
 const colors = document.getElementsByClassName("jsColor")
 const ctx = canvas.getContext("2d")
+const range = document.getElementById("jsRange")
 
 canvas.width = 600
 canvas.height = 500
@@ -39,6 +40,12 @@ function changeColor(event){
   ctx.strokeStyle = color
 }
 
+function rangeChange(event){
+  console.log(event)
+  const size = event.target.value
+  ctx.lineWidth = size
+}
+
 if(canvas){
   canvas.addEventListener("mousemove", onMouseMove)
   canvas.addEventListener("mousedown", startPainting);
@@ -47,3 +54,7 @@ if(canvas){
 }
 
 Array.from(colors).forEach(color => color.addEventListener("click", changeColor))
+
+if(range){
+  range.addEventListener("input", rangeChange)
+}
