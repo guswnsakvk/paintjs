@@ -43,7 +43,7 @@ function onMouseMove(event){
   }
 }
 
-function onMouseUp(event){
+function onMouseUp(){
   stopPainting()
 }
 
@@ -59,7 +59,7 @@ function rangeChange(event){
   ctx.lineWidth = size
 }
 
-function modeClick(event){
+function modeClick(){
   if(filling === true){
     filling = false
     mode.innerText = "Fill"
@@ -80,7 +80,7 @@ function CM(event){
   event.preventDefault()
 }
 
-function saveClick(event){
+function saveClick(){
   const image = canvas.toDataURL()
   const link = document.createElement("a")
   link.href = image
@@ -89,8 +89,7 @@ function saveClick(event){
 }
 
 function clearClick(){
-  ctx.fillStyle = "white"
-  ctx.fillRect(0,0,canvas_width,canvas_height)
+  ctx.clearRect(0,0,canvas_width,canvas_height)
 }
 
 if(canvas){
