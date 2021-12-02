@@ -52,6 +52,7 @@ function changeColor(event){
   const color = event.target.style.backgroundColor
   ctx.strokeStyle = color
   ctx.fillStyle = ctx.strokeStyle
+  button.style.backgroundColor = color
 }
 
 function rangeChange(event){
@@ -118,3 +119,16 @@ if(saveBtn){
 
 if(clearBtn){
   clearBtn.addEventListener("click", clearClick)
+}
+
+function customColor(event){
+  const color = event.detail.color.hexa
+
+  ctx.strokeStyle = color
+  ctx.fillStyle = ctx.strokeStyle
+}
+
+localStorage.clear()
+
+let picker = new ColorPicker(button, "#2C2C2C")
+button.addEventListener("colorChange", customColor)
