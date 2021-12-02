@@ -5,6 +5,7 @@ const range = document.getElementById("jsRange")
 const mode = document.getElementById("jsMode")
 const saveBtn = document.getElementById("jsSave")
 const clearBtn = document.getElementById("jsClear")
+const button = document.getElementById("picker_launcher")
 
 const INITIAL_COLOR = "#2C2C2C"
 
@@ -117,4 +118,3 @@ if(saveBtn){
 
 if(clearBtn){
   clearBtn.addEventListener("click", clearClick)
-}
