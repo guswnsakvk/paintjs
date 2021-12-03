@@ -25,12 +25,15 @@
 </head>
 <body style="background-color: rosybrown;">
   
-  <div id="form">
-    <form id="save-form">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Image name</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="picture">
-      </div>
+  <div id="saveAsForm" class="save">
+    <form id="saveAs">
+      <span id="saveInfo">Image Name</span>
+      <input 
+        type="text" 
+        id="imageName" 
+        placeholder="ex) picture">
+      <button id="saveAsOk"class="select-btn">Save</button>
+      <button id="saveAsCancel"class="select-btn">Cancel</button>
     </form>
   </div>
 
@@ -44,6 +47,7 @@
       <button id="jsMode" class="select-btn">Fill</button>
       <button id="jsClear" class="select-btn">Clear</button>
       <button id="jsSave" class="select-btn">Save</button>
+      <button id="jsSaveAs" class="select-btn">save as</button>
     </div>
     <div id="jsColors" class="controls_colors">
       <div class="controls_color jsColor color-btn" style="background-color: #2c2c2c"></div>

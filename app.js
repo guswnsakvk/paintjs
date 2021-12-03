@@ -6,6 +6,11 @@ const mode = document.getElementById("jsMode")
 const saveBtn = document.getElementById("jsSave")
 const clearBtn = document.getElementById("jsClear")
 const button = document.getElementById("picker_launcher")
+const saveAs = document.getElementById("jsSaveAs")
+const saveAsForm = document.getElementById("saveAsForm")
+const saveAsOk = document.getElementById("saveAsOk")
+const saveAsCancel = document.getElementById("saveAsCancel")
+const saveAsName = document.getElementById("imageName")
 
 const INITIAL_COLOR = "#2C2C2C"
 
@@ -94,6 +99,20 @@ function clearClick(){
   ctx.clearRect(0,0,canvas_width,canvas_height)
 }
 
+function saveAsClick(){
+  saveAsForm.classList.toggle("save")
+}
+
+function saveAsbtn(event){
+  event.preventDefault()
+  const savedName = saveAsName.value
+  const image = canvas.toDataURL()
+  const link = document.createElement("a")
+  link.href = image
+  link.download = savedName
+  link.click()
+}
+
 if(canvas){
   canvas.addEventListener("mousemove", onMouseMove)
   canvas.addEventListener("mousedown", startPainting)
@@ -102,6 +121,13 @@ if(canvas){
   canvas.addEventListener("click", canvasClick)
   canvas.addEventListener("contextmenu", CM)
 }
+
+saveAsOk.addEventListener("click", saveAsbtn)
+
+saveAsCancel.addEventListener("click", (event) => {
+  event.preventDefault()
+  saveAsForm.classList.toggle("save")
+})
 
 Array.from(colors).forEach(color => color.addEventListener("click", changeColor))
 
@@ -119,6 +145,10 @@ if(saveBtn){
 
 if(clearBtn){
   clearBtn.addEventListener("click", clearClick)
+}
+
+if(saveAs){
+  saveAs.addEventListener("click", saveAsClick)
 }
 
 function customColor(event){

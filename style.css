@@ -6,6 +6,10 @@ body{
   position: relative;
 }
 
+.save{
+  display: none;
+}
+
 .color-btn{
   width: 50px;
   height: 50px;
@@ -30,18 +34,38 @@ body{
   font-size: 12px;
 }
 
-#form{
+#saveAsForm{
   position: absolute;
   top: 10px;
-  background-color: red;
+  background-color: #D3D3D3;
   width: 300px;
-  height: 150px;
+  height: 110px;
   border-radius: 15px;
 }
 
-.mb-3{
-  border-radius: 5px;
-  overflow: visible;
+#saveInfo{
+  position: absolute;
+  left: 5px;
+  font-size: 20px;
+}
+
+#imageName{
+  position: absolute;
+  top: 35px;
+  width: 290px;
+  border-radius: 10px;
+}
+
+#saveAsOk{
+  position: absolute;
+  top: 70px;
+  left: 120px;
+}
+
+#saveAsCancel{
+  position: absolute;
+  top: 70px;
+  left: 205px;
 }
 
 .canvas{
